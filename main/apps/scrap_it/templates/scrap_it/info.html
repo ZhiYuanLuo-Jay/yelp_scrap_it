@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Company info show</title>
+    <!-- linking a css style sheet -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'scrap_it/css/index.css' %}">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+</head>
+
+<body>
+    {# {{scrap_info}} #}
+    <div class="wrapper">
+
+        <table class="table table-hover table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th>Company name</th>
+                    <th>Phone number</th>
+                    <th>Company address</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for compList in scrap_info %}
+                <tr>
+                    <td>{{compList.name}}</td>
+                    <td>{{compList.phone}}</td>
+                    <td>{{compList.address}}</td>
+                </tr>             
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="/" class="btn btn-info">Go Back</a>
+
+    </div>
+</body>
+
+</html>

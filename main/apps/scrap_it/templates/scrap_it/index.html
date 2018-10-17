@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Scrap It</title>
+    <!-- linking a css style sheet -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'scrap_it/css/index.css' %}">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+</head>
+
+<body>
+    {# {{scrap_info}} #}
+    <div class="wrapper">
+        
+        <form action="/create" method="post">
+            {% csrf_token %}
+            <label for="Ylink">Yelp Link: </label>
+            <input type="text" name="Ylink" id="url" value="https://www.yelp.com/search?cflt=dryclean&find_loc=San+Francisco+Bay+Area%2C+CA">
+            <input type="submit" class="btn btn-success" value="Scrap it">
+        </form>
+
+    </div>    
+
+</html>
